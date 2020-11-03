@@ -3,6 +3,7 @@ import os
 import sys
 import yaml
 
+#file = /usr/local/bin/notes.yaml
 # main function
 def cli():
   notes = read_yaml()
@@ -118,15 +119,15 @@ def create_file():
 def write_to_file(notes):
   """Writes dictionary to yaml file
   """
-  with open(r'notes.yaml','w') as file:
+  with open(r'/usr/local/bin/notes.yaml','w') as file:
     Var = yaml.dump(notes, file)
 
 def read_yaml():
   """Reads yaml file and constructs dictionary
   """
-  if os.path.isfile('notes.yaml'):
+  if os.path.isfile('/usr/local/bin/notes.yaml'):
     notes = dict()
-    with open(r'notes.yaml') as file:
+    with open(r'/usr/local/bin/notes.yaml') as file:
       notes_file = yaml.full_load(file)
     for item in notes_file:
       notes[item] = []
