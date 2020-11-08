@@ -126,13 +126,8 @@ def read_yaml():
   """Reads yaml file and constructs dictionary
   """
   if os.path.isfile('/usr/local/bin/notes.yaml'):
-    notes = dict()
     with open(r'/usr/local/bin/notes.yaml') as file:
-      notes_file = yaml.full_load(file)
-    for item in notes_file:
-      notes[item] = []
-      for note in notes_file[item]:
-        notes[item].append(note)
+      notes = yaml.full_load(file)
   else:
     notes = dict()
     notes["Remember"] = []
